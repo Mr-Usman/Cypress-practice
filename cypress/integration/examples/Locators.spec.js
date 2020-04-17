@@ -1,4 +1,4 @@
-// <reference types="cypress" />
+/// <reference types="cypress" />
 
 describe("Locating Elements", function () {
   it("verify types of locators", function () {
