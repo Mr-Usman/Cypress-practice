@@ -25,4 +25,24 @@ describe("test suit name", function () {
 
     cy.get("input[type='checkbox']").check(["Cricket", "Hockey"]);
   });
+
+  it("select the skill from dropdown", function () {
+    cy.get("#Skills").select("Android").should("have.value", "Android");
+  });
+
+  it("language multiselect dropdown", function () {
+    cy.get("#msdd").click();
+    cy.get(".ui-corner-all").contains("English").click();
+    cy.get(".ui-corner-all").contains("Hebrew").click();
+  });
+
+  it("searchable dropdown", function () {
+    cy.get("[role='combobox']").click({ force: true });
+    cy.get(".select2-search__field").type("Ind");
+    cy.get(".select2-search__field").type("{enter}");
+  });
+
+  it("select country with static dropdown", function () {
+    cy.get("#countries").select("Pakistan").should("have.value", "Pakistan");
+  });
 });
