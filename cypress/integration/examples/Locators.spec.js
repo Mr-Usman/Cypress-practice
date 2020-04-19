@@ -17,7 +17,7 @@ describe("Locating Elements", function () {
     cy.wait(5000);
 
     cy.get("#topcartlink > a").click();
-
+ 
     cy.wait(3000);
 
     cy.get(
